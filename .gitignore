@@ -69,3 +69,6 @@ typings/
 # rflow output
 /output/
 !/output/.gitkeep
+
+/front-dist/
+!/front-dist/.gitkeep
