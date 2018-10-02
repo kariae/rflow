@@ -1,0 +1,153 @@
+body {
+    font-family: Roboto, Helvetica, Arial;
+}
+
+.graph ul {
+    position: relative;
+	padding: 1em 0;
+    white-space: nowrap;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.graph ul::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.graph li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 1em .5em 0 .5em;
+}
+
+.graph li::before,
+  .graph li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    height: 1em;
+}
+.graph li::after {
+    right: auto;
+    left: 50%;
+	border-left: 1px solid #ccc;
+}
+.graph li:only-child::after,
+.graph li:only-child::before {
+    display: none;
+}
+
+.graph li:only-child {
+    padding-top: 0;
+}
+ .graph li:first-child::before,
+.graph li:last-child::after {
+    border: 0 none;
+}
+.graph li:last-child::before{
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+}
+.graph li:first-child::after{
+    border-radius: 5px 0 0 0;
+}
+
+.graph ul ul::before{
+	content: '';
+	position: absolute;
+    top: 0;
+    left: 50%;
+	border-left: 1px solid #ccc;
+	width: 0;
+    height: 1em;
+}
+
+.graph li .component-name {
+	border: 1px solid #ccc;
+	padding: .5em .75em;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 5px;
+    color: #333;
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+.graph li .component-name:hover,
+.graph li .component-name:hover+ul li .component-name {
+	background: #53c7f0;
+    color: #fff;
+    border: 1px solid #53c7f0;
+}
+
+.graph li .component-name:hover + ul li::after,
+.graph li .component-name:hover + ul li::before,
+.graph li .component-name:hover + ul::before,
+.graph li .component-name:hover + ul ul::before{
+    border-color:  #53c7f0;
+    border-width: 2px;
+}
+
+ .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 2px solid #53c7f0;
+    border-radius: 7px;
+    outline: 0;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.308);
+  }
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.modal-close:hover {
+    color: #53c7f0;
+}
+
+.modal h2 {
+    color: #53c7f0;
+}
+
+.selected-component-information {
+    list-style: none;
+    padding: 0;
+}
+
+.modal strong {
+    width: 50px;
+    display: inline-block;
+}
+
+.modal span {
+    margin-left: 7px;
+}

@@ -1,0 +1,13 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb-base",
+        "plugin:react/recommended",
+        "prettier",
+        "prettier/react"
+    ],
+    "env": {
+        "node": true,
+        "browser": true
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb-base",
+        "prettier"
+    ],
+    "env": {
+        "node": true,
+        "mocha": true
+    },
+    "rules": {
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": [
+                    "webpack.*.js"
+                ]
+            }
+        ]
+    }
+}
